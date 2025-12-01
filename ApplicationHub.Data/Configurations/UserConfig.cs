@@ -10,6 +10,6 @@ public class UserConfig : IEntityTypeConfiguration<User>
     {
         builder.ToTable("users");
         builder.HasKey("Id");
-        builder.Property(x => x.IsAdmin).HasDefaultValue(false);
+        builder.HasIndex(x => x.Email).IsUnique();
     }
 }

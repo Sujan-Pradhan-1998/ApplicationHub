@@ -8,7 +8,7 @@ namespace ApplicationHub.Api.Controllers;
 /// </summary>
 /// <param name="configuration"></param>
 [ApiController]
-[Route("api/[controller]")]
+[Route("api/root")]
 public class RootController(IConfiguration configuration) : ControllerBase
 {
     /// <summary>

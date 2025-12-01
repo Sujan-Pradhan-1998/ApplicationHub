@@ -14,18 +14,26 @@ public static class ServiceRegistration
     {
         #region repos
 
+        services.AddScoped(typeof(IPaginationBaseRepository<,>), typeof(PaginationBaseRepository<,>));
         services.AddScoped<IUserRepository, UserRepository>();
+        services.AddScoped<IApplicationFormRepository, ApplicationFormRepository>();
 
         #endregion
 
         #region services
 
         services.AddScoped<IUserService, UserService>();
+        services.AddScoped<IApplicationFormService, ApplicationFormService>();
 
         #endregion
 
         #region validators
+
         services.AddValidatorsFromAssemblyContaining<UserRequestValidator>();
+        services.AddValidatorsFromAssemblyContaining<LoginRequestValidator>();
+        services.AddValidatorsFromAssemblyContaining<ApplicationFormRequestValidator>();
+        services.AddValidatorsFromAssemblyContaining<PaginatedApplicationFormRequestValidator>();
+
         #endregion
     }
 }

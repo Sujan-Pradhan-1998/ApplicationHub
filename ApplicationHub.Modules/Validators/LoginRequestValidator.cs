@@ -3,9 +3,9 @@ using FluentValidation;
 
 namespace ApplicationHub.Modules.Validators;
 
-public class UserRequestValidator : AbstractValidator<UserRequest>
+public class LoginRequestValidator : AbstractValidator<LoginRequest>
 {
-    public UserRequestValidator()
+    public LoginRequestValidator()
     {
         RuleFor(x => x.Email)
             .NotEmpty()
@@ -14,14 +14,6 @@ public class UserRequestValidator : AbstractValidator<UserRequest>
         RuleFor(x => x.Email)
             .EmailAddress()
             .WithMessage("Email is not a valid.");
-        
-        RuleFor(x => x.FirstName)
-            .NotEmpty()
-            .WithMessage("First name is required.");
-        
-        RuleFor(x => x.LastName)
-            .NotEmpty()
-            .WithMessage("Last name is required.");
         
         RuleFor(x => x.Password)
             .NotEmpty()

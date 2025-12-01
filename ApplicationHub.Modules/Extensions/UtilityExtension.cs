@@ -5,11 +5,21 @@ namespace ApplicationHub.Modules.Extensions
 {
     public static class ValidationResultExtensions
     {
-        public static void AddToModelState(this ValidationResult result, ModelStateDictionary modelState)
+        public static void AddErrorsToModelState(this ValidationResult validationResult, ModelStateDictionary modelState)
         {
-            foreach (var error in result.Errors)
+            foreach (var error in validationResult.Errors)
             {
-                modelState.AddModelError(error.PropertyName, error.ErrorMessage);
+                // If the field already exists in ModelState, add the error
+                if (modelState.ContainsKey(error.PropertyName))
+                {
+                    modelState[error.PropertyName]!.Errors.Add(error.ErrorMessage);
+                    modelState[error.PropertyName]!.ValidationState = ModelValidationState.Invalid;
+                }
+                else
+                {
+                    // Otherwise, create a new entry in ModelState
+                    modelState.AddModelError(error.PropertyName, error.ErrorMessage);
+                }
             }
         }
     }
