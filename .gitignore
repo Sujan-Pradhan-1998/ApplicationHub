@@ -69,3 +69,5 @@ Migrations/*.Designer.cs
 **/.idea/
 
 application_hub
+application_hub-shm
+application_hub-wal

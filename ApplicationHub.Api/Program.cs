@@ -1,4 +1,5 @@
 using System.Reflection;
+using ApplicationHub.Api.Middlewares;
 using ApplicationHub.Data;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -6,7 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddMemoryCache();
 builder.Services.AddScoped<IDbOption, DbOption>();
 builder.Services.AddDbContext<AppDbContext>();
-
+builder.Services.ConfigureServices();
 builder.Services.AddControllers();
 
 // Add services to the container.
@@ -40,7 +41,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseMiddleware<ErrorHandlerMiddleware>();
 app.UseAuthorization();
 app.MapControllers();
-
 app.Run();

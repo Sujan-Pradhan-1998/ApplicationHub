@@ -16,7 +16,7 @@ public class RootController(IConfiguration configuration) : ControllerBase
     /// </summary>
     /// <returns>Returns the current version of the Application Hub.</returns>
     [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(string))]
-    [HttpGet]
+    [HttpGet("version")]
     public string? Get()
     {
         return configuration[ApplicationHubConstants.Version];
