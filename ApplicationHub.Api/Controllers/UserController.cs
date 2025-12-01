@@ -15,7 +15,7 @@ namespace ApplicationHub.Api.Controllers;
 [ApiController]
 [Route("api/user")]
 [Authorize]
-public class UserController(IUserService userService, IValidator<UserRequest> userRequestValidator) : ControllerBase
+public class UserController(IUserService userService, IValidator<UserRequest> userRequestValidator, IUserMeta userMeta) : ControllerBase
 {
     /// <summary>
     /// Get user by id
@@ -53,5 +53,16 @@ public class UserController(IUserService userService, IValidator<UserRequest> us
         var newUser = await userService.AddUser(request);
         if (newUser is null) return BadRequest("Unable to create user.");
         return Ok(newUser);
+    }
+
+    /// <summary>
+    /// Get current user meta
+    /// </summary>
+    /// <returns></returns>
+    [HttpGet("usermeta")]
+    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(UserMeta))]
+    public IActionResult GetUserMeta()
+    {
+        return Ok(userMeta);
     }
 }

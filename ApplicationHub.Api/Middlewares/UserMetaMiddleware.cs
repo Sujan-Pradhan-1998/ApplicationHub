@@ -24,6 +24,7 @@ public class UserMetaMiddleware(RequestDelegate next)
             userMeta.CurrentCompany = jwt.Claims.FirstOrDefault(c => c.Type == "currentCompany")?.Value ?? "";
             userMeta.Email = jwt.Claims.FirstOrDefault(c => c.Type == "email")?.Value ?? "";
             userMeta.Id = Guid.Parse(jwt.Claims.FirstOrDefault(c => c.Type == "id")?.Value ?? "");
+            userMeta.UserName = jwt.Claims.FirstOrDefault(c => c.Type == "userName")?.Value ?? "";
         }
 
         await next(context);

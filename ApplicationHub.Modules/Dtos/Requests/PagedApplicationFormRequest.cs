@@ -8,7 +8,7 @@ public class PagedApplicationFormRequest
 {
     [BindNever]
     [JsonIgnore] public Guid UserId { get; set; }
-    public DateOnly? AppliedOn { get; set; }
+    public DateTime? AppliedOn { get; set; }
     public string? Company { get; set; }
     public string? Position { get; set; }
     public ApplicationFormStatusEnum? FormStatus { get; set; }

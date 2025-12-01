@@ -11,6 +11,6 @@ public class ApplicationForm
     public required string Position { get; set; }
     public string? Description { get; set; }
     public required ApplicationFormStatusEnum FormStatus { get; set; }
-    public DateOnly AppliedOn { get; set; }
+    public DateTime AppliedOn { get; set; }
     public DateTime CreatedOn { get; set; }
 }

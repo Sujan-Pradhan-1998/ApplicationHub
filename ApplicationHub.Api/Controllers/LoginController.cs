@@ -52,11 +52,17 @@ public class LoginController(
         var tokenHandler = new JwtSecurityTokenHandler();
         var key = Encoding.ASCII.GetBytes(_signingKey);
 
+        var fullName = loginUser.FirstName;
+
+        if (string.IsNullOrWhiteSpace(loginUser.MiddleName)) fullName += " " + loginUser.MiddleName;
+        fullName += " " + loginUser.LastName;
+
         var claims = new[]
         {
             new Claim("id", loginUser.Id.ToString()),
             new Claim(ClaimTypes.Email, loginUser.Email),
-            new Claim("currentCompany", loginUser.CurrentCompany ?? string.Empty)
+            new Claim("currentCompany", loginUser.CurrentCompany ?? string.Empty),
+            new Claim("userName", fullName ?? string.Empty)
         };
 
         var tokenDescriptor = new SecurityTokenDescriptor
