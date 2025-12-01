@@ -1,0 +1,69 @@
+# --------------------------
+# .NET Core / .NET 8
+# --------------------------
+
+bin/
+obj/
+out/
+publish/
+*.dll
+*.exe
+*.db
+
+# Visual Studio / Rider / VS Code
+.vs/
+.vscode/
+!.vscode/extensions.json
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# NuGet
+*.nupkg
+*.snupkg
+.nuget/
+packages/
+
+# EF Core Migrations
+Migrations/*.Designer.cs
+
+# --------------------------
+# Node / React (ClientApp)
+# --------------------------
+
+# Dependencies
+ClientApp/node_modules/
+
+# Build outputs
+ClientApp/dist/
+ClientApp/dist-ssr/
+ClientApp/build/
+
+# Logs
+ClientApp/logs
+ClientApp/*.log
+ClientApp/npm-debug.log*
+ClientApp/yarn-debug.log*
+ClientApp/yarn-error.log*
+ClientApp/pnpm-debug.log*
+ClientApp/lerna-debug.log*
+
+# Environment variables
+ClientApp/.env
+ClientApp/.env.local
+ClientApp/.env.development.local
+ClientApp/.env.test.local
+ClientApp/.env.production.local
+ClientApp/*.local
+
+# Editor directories and files
+ClientApp/.vscode/*
+ClientApp/.idea/
+ClientApp/.DS_Store
+
+/.idea/
