@@ -37,33 +37,35 @@ Migrations/*.Designer.cs
 # --------------------------
 
 # Dependencies
-ClientApp/node_modules/
+**/ClientApp/node_modules/
 
 # Build outputs
-ClientApp/dist/
-ClientApp/dist-ssr/
-ClientApp/build/
+**/ClientApp/dist/
+**/ClientApp/dist-ssr/
+**/ClientApp/build/
 
 # Logs
-ClientApp/logs
-ClientApp/*.log
-ClientApp/npm-debug.log*
-ClientApp/yarn-debug.log*
-ClientApp/yarn-error.log*
-ClientApp/pnpm-debug.log*
-ClientApp/lerna-debug.log*
+**/ClientApp/logs
+**/ClientApp/*.log
+**/ClientApp/npm-debug.log*
+**/ClientApp/yarn-debug.log*
+**/ClientApp/yarn-error.log*
+**/ClientApp/pnpm-debug.log*
+**/ClientApp/lerna-debug.log*
 
 # Environment variables
-ClientApp/.env
-ClientApp/.env.local
-ClientApp/.env.development.local
-ClientApp/.env.test.local
-ClientApp/.env.production.local
-ClientApp/*.local
+**/ClientApp/.env
+**/ClientApp/.env.local
+**/ClientApp/.env.development.local
+**/ClientApp/.env.test.local
+**/ClientApp/.env.production.local
+**/ClientApp/*.local
 
 # Editor directories and files
-ClientApp/.vscode/*
-ClientApp/.idea/
-ClientApp/.DS_Store
+**/ClientApp/.vscode/*
+**/ClientApp/.idea/
+**/ClientApp/.DS_Store
 
-/.idea/
+**/.idea/
+
+application_hub

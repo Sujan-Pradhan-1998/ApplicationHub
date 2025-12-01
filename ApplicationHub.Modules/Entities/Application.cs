@@ -1,0 +1,13 @@
+using System.ComponentModel.DataAnnotations;
+
+namespace ApplicationHub.Modules.Entities;
+
+public class Application
+{
+    [Key] public required Guid Id { get; set; }
+    public required Guid UserId { get; set; }
+    public required string Company { get; set; }
+    public required string Position { get; set; }
+    public string? Status { get; set; }
+    public DateOnly AppliedOn { get; set; }
+}
