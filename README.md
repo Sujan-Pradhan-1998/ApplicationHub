@@ -23,7 +23,7 @@ Application Hub can be used for storing the user application from details. This 
 
 ## Restore Dependencies:
 Run the following command to restore all .NET dependencies:
--Navigate to ApplicationHub.Api folder
+- Navigate to ApplicationHub.Api folder
 
 ```bash
 dotnet restore
@@ -37,15 +37,15 @@ npm install
 
 ## Running the Application
 You can run the application api using the .NET CLI:
-
+- Navigate to ApplicationHub.Api
 ```bash
-cd ApplicationHub.Api dotnet run
+dotnet run
 ```
 
 You can run the application UI using the npm:
-
+- Navigate to ApplicationHub.Api/ClientApp
 ```bash
-cd ApplicationHub.Api/ClientApp npm run dev
+npm run dev
 ```
 
 You can use following test user:
