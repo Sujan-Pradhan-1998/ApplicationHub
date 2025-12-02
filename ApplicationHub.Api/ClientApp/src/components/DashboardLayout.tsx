@@ -29,7 +29,7 @@ const siderStyle: React.CSSProperties = {
 
 const DashboardLayout = () => {
   const navigate = useNavigate();
-  const [collapsed, setCollapsed] = useState(false);
+  const [collapsed, setCollapsed] = useState(localStorage.getItem("collapsed") == "true" || false);
 
   const handleLogout = async () => {
     await post<any>('login/logout', {});
@@ -75,7 +75,10 @@ const DashboardLayout = () => {
         style={siderStyle}
         collapsible
         collapsed={collapsed}
-        onCollapse={(value) => setCollapsed(value)}
+        onCollapse={(value) => {
+          setCollapsed(value)
+          localStorage.setItem("collapsed", `${value}`)
+        }}
       >
         <div className="sidebar-logo">
           <a onClick={() => navigate("/dashboard")}>
@@ -98,7 +101,10 @@ const DashboardLayout = () => {
           <Button
             type="text"
             icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
-            onClick={() => setCollapsed(!collapsed)}
+            onClick={() => {
+              setCollapsed(!collapsed)
+              localStorage.setItem("collapsed", `${!collapsed}`)
+            }}
             style={{ fontSize: 16, width: 64, height: 64 }}
           />
           <Typography.Text strong>User : </Typography.Text>
