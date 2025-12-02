@@ -25,11 +25,6 @@ public class AppDbContext(DbContextOptions<AppDbContext> options, IDbOption dbOp
                 .UseSnakeCaseNamingConvention();
         }
     }
-
-    public void EnsureDatabaseCreated()
-    {
-        Database.EnsureCreated();
-    }
     
     public override int SaveChanges()
     {

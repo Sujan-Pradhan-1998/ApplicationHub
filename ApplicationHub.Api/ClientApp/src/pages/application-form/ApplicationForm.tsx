@@ -8,7 +8,7 @@ import { CloseOutlined, SaveOutlined } from '@ant-design/icons';
 import TextArea from 'antd/es/input/TextArea';
 import { get, post, put } from '../../services/ajaxService';
 import type { ApplicationFormModel } from '../../models/ApplicationModel';
-import { showSuccessMessage } from '../../services/messageService';
+import { showErrorMessage, showSuccessMessage } from '../../services/messageService';
 import type { Column } from '../../models/CrudModel';
 
 const ApplicationFormPage = () => {
@@ -30,6 +30,13 @@ const ApplicationFormPage = () => {
 
     const onSubmit = async () => {
         const values = await form.validateFields();
+        const appliedOnDate = new Date(values.appliedOn);
+
+        if (appliedOnDate.getTime() > Date.now()) {
+            showErrorMessage("Applied on cannot be in future.");
+            return;
+        }
+
         setLoading(true);
 
         const res = id ? await put('/applicationform', { ...values, id }) :

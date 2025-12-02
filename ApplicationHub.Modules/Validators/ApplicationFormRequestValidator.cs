@@ -16,6 +16,10 @@ public class ApplicationFormRequestValidator : AbstractValidator<ApplicationForm
             .NotEmpty()
             .WithMessage("AppliedOn is required.");
 
+        RuleFor(x => x.AppliedOn)
+            .Must(x => x <= DateTime.Today)
+            .WithMessage("AppliedOn cannot be in the future.");
+
         RuleFor(x => x.Company)
             .NotEmpty()
             .WithMessage("Company is required.");

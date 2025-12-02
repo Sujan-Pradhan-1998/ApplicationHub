@@ -1,4 +1,6 @@
-namespace ApplicationHub.Api;
+using ApplicationHub.Api;
+
+namespace ApplicationHub.Data.Repos;
 
 public class UserMeta : IUserMeta
 {

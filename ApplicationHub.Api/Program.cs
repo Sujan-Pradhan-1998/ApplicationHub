@@ -4,6 +4,7 @@ using ApplicationHub.Api;
 using ApplicationHub.Api.Middlewares;
 using ApplicationHub.Data;
 using ApplicationHub.Data.Mappings;
+using ApplicationHub.Data.Repos;
 using ApplicationHub.Modules.Entities;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
