@@ -46,3 +46,6 @@ You can run the application UI using the npm:
 cd ApplicationHub.Api/ClientApp npm run dev
 ```
 
+You can use following test user:
+- Email: test@gmail.com 
+- Password: Test123
