@@ -43,6 +43,7 @@ Migrations/*.Designer.cs
 **/ClientApp/dist/
 **/ClientApp/dist-ssr/
 **/ClientApp/build/
+**/ClientApp/coverage/
 
 # Logs
 **/ClientApp/logs
