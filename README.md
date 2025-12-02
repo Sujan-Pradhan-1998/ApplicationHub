@@ -1,2 +1,48 @@
 # ApplicationHub
-Application Tracking Software
+Application Hub can be used for storing the user application from details. This project uses Repository Design Pattern.
+
+# Prerequisites
+- .Net SDK (version 8.0)
+- Node js version 22
+
+# Technologies
+- .NET Core 8.0
+- React 18
+- Sqlite Db
+
+## Improvement Required:
+- Redis cache can be used instead
+- Different database could be used for storing the data.
+- More unit test case is Required
+- Email for registering new user could be sent to email for confirmation purpose
+- Roles could be implemented for better control process of the overall user application.
+
+## List of Assumption :
+- The user logged in is only allowed view their applications.
+
+
+## Restore Dependencies:
+Run the following command to restore all .NET dependencies:
+
+```bash
+cd ApplicationHub.Api dotnet restore
+```
+
+Run the following to install node_modules 
+```bash
+cd ApplicationHub.Api/ClientApp npm install
+```
+
+## Running the Application
+You can run the application api using the .NET CLI:
+
+```bash
+cd ApplicationHub.Api dotnet run
+```
+
+You can run the application UI using the npm:
+
+```bash
+cd ApplicationHub.Api/ClientApp npm run dev
+```
+
