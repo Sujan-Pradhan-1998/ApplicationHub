@@ -83,3 +83,12 @@ export async function del(url: string) {
         showErrorMessage("Could not delete this item");
     }
 }
+
+export async function put<TResponse>(url: string, body: {}, onError?: false | (() => void)) {
+    try {
+        const res = await instance.put<TResponse>(url, body);
+        return res && res;
+    } catch (error) {
+        handleError(error, onError);
+    }
+}

@@ -1,7 +1,7 @@
 const localStorageAuthTokenKey = 'application-hub-key'
 
 export function getBearerToken() {
-    var token = sessionStorage.getItem(localStorageAuthTokenKey)
+    var token = localStorage.getItem(localStorageAuthTokenKey)
     if(!token) {
         token = localStorage.getItem(localStorageAuthTokenKey)
         localStorage.removeItem(localStorageAuthTokenKey);
@@ -11,11 +11,11 @@ export function getBearerToken() {
 }
 
 export function setBearerToken(token: string) {
-    sessionStorage.setItem(localStorageAuthTokenKey, token)
+    localStorage.setItem(localStorageAuthTokenKey, token)
 }
 
 export async function logout() {
-    sessionStorage.removeItem(localStorageAuthTokenKey);
+    localStorage.removeItem(localStorageAuthTokenKey);
     location.href='/login'
 }
 

@@ -3,8 +3,7 @@ import {
   FileAddOutlined,
   LoginOutlined,
   MenuFoldOutlined,
-  MenuUnfoldOutlined,
-  UserOutlined,
+  MenuUnfoldOutlined
 } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
 import { Button, Divider, Layout, Menu, theme, Typography } from 'antd';
@@ -51,12 +50,6 @@ const DashboardLayout = () => {
   const items: MenuProps['items'] = [
     {
       key: '1',
-      icon: <UserOutlined />,
-      label: 'Users',
-      onClick: () => navigate('/user'),
-    },
-    {
-      key: '2',
       icon: <FileAddOutlined />,
       label: 'Application',
       onClick: () => navigate('/application-form'),

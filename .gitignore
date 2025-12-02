@@ -67,7 +67,3 @@ Migrations/*.Designer.cs
 **/ClientApp/.DS_Store
 
 **/.idea/
-
-application_hub
-application_hub-shm
-application_hub-wal

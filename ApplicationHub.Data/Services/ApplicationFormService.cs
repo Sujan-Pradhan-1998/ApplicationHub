@@ -23,10 +23,21 @@ public class ApplicationFormService(
         return application?.Adapt<ApplicationFormResponse>();
     }
 
+    public async Task<ApplicationFormResponse?> UpdateApplicationForm(ApplicationFormUpdateRequest applicationFormUpdateRequest)
+    {
+        var application = await applicationFormRepository.UpdateApplicationForm(applicationFormUpdateRequest);
+        return application?.Adapt<ApplicationFormResponse>();
+    }
+
     public async Task<PaginatedResponse<ApplicationFormResponse>> GetMyApplicationForms(
         PaginatedRequest<ApplicationForm, PagedApplicationFormRequest> pagedRequest)
     {
         var data = await applicationFormRepository.GetMyApplicationForms(pagedRequest);
         return data.Adapt<PaginatedResponse<ApplicationFormResponse>>();
+    }
+
+    public async Task<bool> DeleteApplicationFormById(Guid applicationFormId)
+    {
+        return await applicationFormRepository.DeleteApplicationFormById(applicationFormId);
     }
 }

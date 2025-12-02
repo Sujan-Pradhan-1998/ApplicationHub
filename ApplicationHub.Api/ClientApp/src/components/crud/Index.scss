@@ -1,0 +1,24 @@
+.page-crud{
+    &-title{
+        color: #016a8a;
+    }
+    &-grid-action {
+        padding-bottom: 0.5em;
+    
+        button {
+            margin: 0 0.5px;
+        }
+    
+        .right-item {
+            text-align: right;
+        }
+    }
+    .width-70 {
+        width: 60%;
+    }
+}
+
+.action-td{
+    float: right;
+    padding-right: 1.5em;
+}

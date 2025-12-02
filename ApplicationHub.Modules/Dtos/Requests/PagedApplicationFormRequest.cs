@@ -11,5 +11,5 @@ public class PagedApplicationFormRequest
     public DateTime? AppliedOn { get; set; }
     public string? Company { get; set; }
     public string? Position { get; set; }
-    public ApplicationFormStatusEnum? FormStatus { get; set; }
+    public string? FormStatus { get; set; }
 }

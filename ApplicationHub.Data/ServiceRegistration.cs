@@ -32,6 +32,7 @@ public static class ServiceRegistration
         services.AddValidatorsFromAssemblyContaining<UserRequestValidator>();
         services.AddValidatorsFromAssemblyContaining<LoginRequestValidator>();
         services.AddValidatorsFromAssemblyContaining<ApplicationFormRequestValidator>();
+        services.AddValidatorsFromAssemblyContaining<ApplicationFormUpdateRequestValidator>();
         services.AddValidatorsFromAssemblyContaining<PaginatedApplicationFormRequestValidator>();
 
         #endregion
