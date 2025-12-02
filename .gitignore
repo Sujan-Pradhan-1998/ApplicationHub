@@ -20,7 +20,6 @@ publish/
 *.sln.docstates
 *.ntvs*
 *.njsproj
-*.sln
 *.sw?
 
 # NuGet
