@@ -6,29 +6,8 @@ import { setBearerToken } from "../../utils/auth";
 import { showErrorMessage, showSuccessMessage } from "../../services/messageService";
 import "../../styles/Login.scss";
 import { post } from "../../services/ajaxService";
+import type { LoginModel, RegisterModel, UserModel } from "../../models/LoginModel";
 
-export interface LoginModel {
-  email: string;
-  password: string
-}
-
-export interface RegisterModel {
-  firstName: string;
-  middleName: string;
-  lastName: string;
-  currentCompany: string;
-  email: string;
-  confirmEmail: string;
-  password: string;
-  confirmPassword: string;
-}
-export interface UserModel {
-  firstName: string;
-  middleName: string;
-  lastName: string;
-  currentCompany: string;
-  email: string;
-}
 
 const LoginPage: React.FC = () => {
   const navigate = useNavigate();
@@ -193,7 +172,7 @@ const LoginPage: React.FC = () => {
               }),
             ]}
           >
-            <Input onPaste={(e) => e.preventDefault()}/>
+            <Input onPaste={(e) => e.preventDefault()} />
           </Form.Item>
 
           <Form.Item style={{ marginBottom: 15 }}
@@ -220,7 +199,7 @@ const LoginPage: React.FC = () => {
               }),
             ]}
           >
-            <Input.Password onPaste={(e) => e.preventDefault()}/>
+            <Input.Password onPaste={(e) => e.preventDefault()} />
           </Form.Item>
 
           <Form.Item>

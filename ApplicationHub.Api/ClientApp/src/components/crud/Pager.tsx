@@ -1,17 +1,9 @@
 import { useState, useMemo, useCallback } from 'react';
 import { Button, Input, Col, InputNumber, Dropdown, Tooltip, Select, Row, Space } from 'antd';
-import type { CustomButton } from './Index';
 import _ from 'lodash';
+import type { CrudPagerProps } from '../../models/CrudModel';
 
-interface Props {
-    totalPages: number;
-    currentPage: number;
-    filterColumns?: string[];
-    onPageChange: (currentPage: number, query: string, searchBy?: string) => void;
-    headerButtons?: CustomButton<any>[];
-}
-
-export const Pager = ({ totalPages, currentPage, filterColumns, onPageChange, headerButtons }: Props) => {
+export const Pager = ({ totalPages, currentPage, filterColumns, onPageChange, headerButtons }: CrudPagerProps) => {
     const [query, setQuery] = useState('');
     const [searchBy, setSearchBy] = useState<string | undefined>(filterColumns && filterColumns[0]);
     const [showMore, setShowMore] = useState(false);

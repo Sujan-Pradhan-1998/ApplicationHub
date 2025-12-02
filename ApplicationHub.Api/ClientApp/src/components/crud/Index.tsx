@@ -1,60 +1,9 @@
 import './Index.scss'
-
-export interface DataFormProps<T = number> {
-    id: T;
-    goToList: () => void;
-}
-
-export interface Entity {
-    [index: string]: any;
-    id: number;
-}
-
-export interface CustomButton<T> {
-    icon: string | React.ReactNode,
-    className?: string,
-    onClick: (record: T) => void
-    renderer?: (record: T) => boolean
-    label: string
-}
-
-export interface Column<T> {
-    title: string | React.ReactNode
-    key: keyof T
-    dataIndex: keyof T
-    render?: (text: any, record: T, index: number) => React.ReactNode
-    onCell?: (record: T, rowIndex: number) => any
-    align?: 'left' | 'right' | 'center'
-    className?: string
-}
-
-interface Props<T> {
-    DataFormComponent: React.ReactNode;
-    customActions?: CustomButton<T>[]
-    title: string;
-    basePath: string;
-    apiBaseEndPoint: string;
-    itemGetUrl?: string
-    showList?: boolean
-    filterColumns?: string[]
-    columns: Column<T>[];
-    editButton?: boolean;
-    deleteButton?: boolean;
-    addButton?: boolean;
-    modelInit: (model: any) => void
-    gotoPath?: (url: string) => void
-    onEdit?: (record: any) => void
-    onAdd?: () => void
-    initEntry?: () => void
-    rowClassName?: (rec: T) => string
-    headerButtons?: CustomButton<any>[]
-}
-
-type CrudProps<T> = Props<T>;
-import React, { useEffect, useState, useCallback } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { Routes, Route, useNavigate, useParams } from "react-router-dom";
 import List from './List';
 import { Edit } from './Edit';
+import type { CrudProps } from '../../models/CrudModel';
 
 const Crud = <T,>(props: CrudProps<T>) => {
     const {

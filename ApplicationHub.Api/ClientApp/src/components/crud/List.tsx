@@ -1,46 +1,14 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { Table, Button, Row, Col, Divider, Tooltip, Modal } from "antd";
 import { useNavigate } from "react-router-dom";
-import { del, get, post } from "../../services/ajaxService";
+import { del, get } from "../../services/ajaxService";
 import { showSuccessMessage } from "../../services/messageService";
-import type { CustomButton } from "./Index";
 import Icon, { DeleteOutlined, EditOutlined, PlusOutlined } from '@ant-design/icons'
 import { Loader } from "../Loader";
 import { Pager } from "./Pager";
+import type { CrudListProps, PageData, PageFormModel, CustomButton } from "../../models/CrudModel";
 
-export interface PageData<T> {
-    pageNumber: number;
-    totalPages: number;
-    totalRecords: number;
-    pageSize: number;
-    items: T[];
-}
-
-export interface PageFormModel {
-    pageNumber: number;
-    search?: string
-    searchBy?: string
-    query: string
-    sortDesc?: boolean
-}
-
-interface Props {
-    apiEndPoint: string;
-    columns: any[];
-    showList?: boolean;
-    filterColumns?: string[];
-    basePath: string;
-    editButton?: boolean;
-    onEdit?: (record: any) => void;
-    deleteButton?: boolean;
-    addButton?: boolean;
-    onAdd?: () => void;
-    customActions?: CustomButton<any>[];
-    rowClassName?: (rec: any) => string;
-    headerButtons?: CustomButton<any>[];
-}
-
-const List = <TPageData,>(props: Props) => {
+const List = <TPageData,>(props: CrudListProps) => {
     const navigate = useNavigate();
 
     const [data, setData] = useState<PageData<TPageData>>({

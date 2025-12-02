@@ -1,16 +1,11 @@
-import * as React from 'react'
-import { Spin, type SpinProps } from "antd";
+import { Spin } from "antd";
 import { LoadingOutlined } from '@ant-design/icons'
+import type { LoaderProps } from '../models/LoaderModel';
 
-interface Props extends SpinProps {
-    children?: React.ReactNode
-    type?: LoaderTypes
-}
-type LoaderTypes = 'brand' | 'circle' | 'default'
 
-function getSpinner(props: Props) {
+function getSpinner(props: LoaderProps) {
     const loadingText = props.tip || 'Loading...'
-    const commonProps: Props = { ...props, tip: loadingText }
+    const commonProps: LoaderProps = { ...props, tip: loadingText }
     switch (props.type) {
         case 'brand':
             return <Spin {...commonProps}>
@@ -29,7 +24,7 @@ function getSpinner(props: Props) {
     }
 }
 
-export const Loader = (props: Props) => {
+export const Loader = (props: LoaderProps) => {
     const className = props.children ? '' : 'flex-center'
     return <div className={className} style={{ minHeight: '4rem' }}>
         {getSpinner(props)}

@@ -3,13 +3,13 @@ import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Form, Row, Col, Button, Input, DatePicker, Divider, Select } from 'antd';
 import { gutterSize } from '../../constants/constants';
-import type { Column } from '../../components/crud/Index';
 import Crud from '../../components/crud/Index';
 import { CloseOutlined, SaveOutlined } from '@ant-design/icons';
 import TextArea from 'antd/es/input/TextArea';
 import { get, post, put } from '../../services/ajaxService';
 import type { ApplicationFormModel } from '../../models/ApplicationModel';
 import { showSuccessMessage } from '../../services/messageService';
+import type { Column } from '../../models/CrudModel';
 
 const ApplicationFormPage = () => {
     const navigate = useNavigate();

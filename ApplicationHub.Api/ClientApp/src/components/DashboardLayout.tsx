@@ -12,15 +12,9 @@ import { useNavigate, Outlet } from 'react-router-dom';
 import "../styles/Dashboard.scss";
 import logo from '../assets/logo.png';
 import { get, post } from '../services/ajaxService';
+import type { UserMeta } from '../models/UserMetaModel';
 
 const { Header, Content, Footer, Sider } = Layout;
-
-export interface UserMeta {
-  id: string;
-  userName: string;
-  currentCompany: string;
-  email: string;
-}
 
 const siderStyle: React.CSSProperties = {
   overflow: 'auto',

@@ -1,21 +1,9 @@
 import React, { useEffect, useCallback } from 'react';
 import { Card } from 'antd';
 import { get } from '../../services/ajaxService';
+import type { EditProps } from '../../models/CrudModel';
 
-interface Props {
-    title: string;
-    onReset?: () => void;
-    gotoView: () => void;
-    liveTitle?: string;
-    url: string;
-    DataForm: React.ReactNode;
-    id?: any;
-    itemGetUrl?: string;
-    modelInit: (model: any) => void;
-    initEntry?: () => void;
-}
-
-const Edit: React.FC<Props> = ({
+const Edit: React.FC<EditProps> = ({
     id,
     itemGetUrl,
     url,
